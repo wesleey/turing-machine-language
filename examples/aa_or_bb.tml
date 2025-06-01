@@ -1,0 +1,21 @@
+@states: q0,q1,q2,y
+@tape_alphabet: a,b,_,>
+@input_alphabet: a,b
+@initial_state: q0
+@final_states: y
+
+/*--------------------------------------.
+| This Turing machine accepts strings   |
+| contain either "aa" or "bb".          |
+`--------------------------------------*/
+
+(q0, >) = (q0, R)
+(q0, _) = (q0, R)
+(q0, a) = (q1, R)
+(q0, a) = (q0, R)
+(q0, b) = (q0, R)
+(q0, b) = (q2, R)
+(q1, a) = (y, R)
+(q1, b) = (q0, R)
+(q2, a) = (q0, R)
+(q2, b) = (y, R)
